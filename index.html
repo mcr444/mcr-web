@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Rychlý servisní zásah a oprava na místě. Nonstop 24/7 Královéhradcký a Liberecký kraj. Zavolejte ihned a smluvte si opravu ještě dnes.">
+        <meta name="keywords" content="autoservis, servis, oprava, diagnostika, Vrchlabí, Jilemnice, Trutnov, Jičín, Hradec Králové, Liberec">
+        <meta name="robots" content="all">
+        <meta name="author" content="yurkur">
+        <title>
+            Mobile Car Rescue
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="mcr_icon_32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="mcr_icon_16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="mcr_icon_apple.png">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container header-inner">
+                <a href="index.html" class="logo-header">
+                    <img src="mcr_logo_header.webp" alt="mobile car rescue logo">
+                </a>
+
+                <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="site-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav" id="site-nav">
+                    <a class="nav-link" href="index.html" aria-current="page">DOMŮ</a>
+                    <a class="nav-link" href="sluzby.html">SLUŽBY</a>
+                    <a class="nav-link" href="kontakt.html">KONTAKT</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="homepage">
+                <div class="container">
+                    <a class="homepage-number" href="tel:+420736140887" aria-label="Zavolat na číslo 736 140 887">
+                        <img class="homepage-number-default" src="mcr_home_number.webp">
+                        <img class="homepage-number-hover" src="mcr_home_number_hover.webp">
+                    </a>
+
+                    <div class="homepage-text">
+                        <h1>Servisní zásah v terénu i v garáži!</h1>
+                        <h2>Zradilo Vás vozidlo na cestách nebo potřebujete servis?<br>
+                            <br>
+                            Působíme v Královéhradeckém a Libereckém kraji - spojte se s námi.
+                        </h2>
+                    </div>
+
+                    <button class="homepage-call" onclick="window.location.href='tel:+420736140887'" aria-label="Zavolat na číslo 736 140 887">ZAVOLAT</button>
+                </div>
+            </section>
+        </main>
+
+        <section class="car">
+            <img src="mcr_home_car.webp">
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-inner">
+                <a href="index.html" class="logo-footer">
+                    <img src="mcr_logo_footer.webp">
+                </a>
+            </div>
+        </footer>
+
+        <script>
+            const navToggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav');
+            const navLinks = nav.querySelectorAll('a');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+
+                    if (!href || href.startsWith('#') || this.target === '_blank') return;
+
+                    e.preventDefault();
+
+                    document.querySelector('main').classList.add('fade-out');
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200);
+                });
+            });
+        </script>
+    
+    </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Rychlý servisní zásah a oprava na místě. Nonstop 24/7 Královéhradcký a Liberecký kraj. Zavolejte ihned a smluvte si opravu ještě dnes.">
+        <meta name="keywords" content="autoservis, servis, oprava, diagnostika, Vrchlabí, Jilemnice, Trutnov, Jičín, Hradec Králové, Liberec">
+        <meta name="robots" content="all">
+        <meta name="author" content="yurkur">
+        <title>
+            Kontakt
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="mcr_icon_32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="mcr_icon_16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="mcr_icon_apple.png">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container header-inner">
+                <a href="index.html" class="logo-header">
+                    <img src="mcr_logo_header.webp" alt="mobile car rescue logo">
+                </a>
+
+                <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="site-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav" id="site-nav">
+                    <a class="nav-link" href="index.html">DOMŮ</a>
+                    <a class="nav-link" href="sluzby.html">SLUŽBY</a>
+                    <a class="nav-link" href="kontakt.html" aria-current="page">KONTAKT</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="kontakt">
+                <div class="container">
+                    <div class="kontakt-head">
+                        <h1>Autoslužby Vojtěch Ludvík</h1>
+                    </div>
+
+                    <div class="kontakt-card">
+                        <div class="kontakt-row kontakt-row-2">
+                            <a href="tel:+420736140887" class="kontakt-item">
+                                <span class="kontakt-icon">●</span>
+                                <span>736 140 887</span>
+                            </a>
+
+                            <a href="https://instagram.com/" class="kontakt-item" target="_blank" rel="noopener noreferrer">
+                                <span class="kontakt-icon">●</span>
+                                <span>@dilnanakolech</span>
+                            </a>
+                        </div>
+
+                        <div class="kontakt-row kontakt-row-2">
+                            <a href="mailto:placeholder@email.cz" class="kontakt-item">
+                                <span class="kontakt-icon">●</span>
+                                <span>placeholder@email.cz</span>
+                            </a>
+
+                            <div class="kontakt-item">
+                                <span class="kontakt-icon">●</span>
+                                <span>IČO: 10777076</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kontakt-card">
+                        <div class="kontakt-row">
+                            <div class="kontakt-item">
+                                <span class="kontakt-icon">●</span>
+                                <span>Po - Pá: 8:00 - 18:00</span>
+                            </div>
+                        </div>
+
+                        <div class="kontakt-row">
+                            <div class="kontakt-item">
+                                <span class="kontakt-icon">●</span>
+                                <span>Královéhradecký a Liberecký kraj</span>
+                            </div>
+                        </div>
+
+                        <div class="kontakt-row">
+                            <div class="kontakt-item">
+                                <span class="kontakt-icon">●</span>
+                                <span>V Zátiší 458, 543 03 Vrchlabí, Podhůří</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kontakt-map">
+                        <iframe
+                            src="https://www.google.com/maps?q=V%20Z%C3%A1ti%C5%A1%C3%AD%20458%2C%20543%2003%20Vrchlab%C3%AD&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <section class="car">
+            <img src="mcr_home_car.webp">
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-inner">
+                <a href="index.html" class="logo-footer">
+                    <img src="mcr_logo_footer.webp">
+                </a>
+            </div>
+        </footer>
+
+        <script>
+            const navToggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav');
+            const navLinks = nav.querySelectorAll('a');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+
+                    if (!href || href.startsWith('#') || this.target === '_blank') return;
+
+                    e.preventDefault();
+
+                    document.querySelector('main').classList.add('fade-out');
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200);
+                });
+            });
+        </script>
+
+    </body>
+</html>
