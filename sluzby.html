@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Rychlý servisní zásah a oprava na místě. Nonstop 24/7 Královéhradcký a Liberecký kraj. Zavolejte ihned a smluvte si opravu ještě dnes.">
+        <meta name="keywords" content="autoservis, servis, oprava, diagnostika, Vrchlabí, Jilemnice, Trutnov, Jičín, Hradec Králové, Liberec">
+        <meta name="robots" content="all">
+        <meta name="author" content="yurkur">
+        <title>
+            Služby
+        </title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" sizes="32x32" href="mcr_icon_32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="mcr_icon_16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="mcr_icon_apple.png">
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container header-inner">
+                <a href="index.html" class="logo-header">
+                    <img src="mcr_logo_header.webp" alt="mobile car rescue logo">
+                </a>
+
+                <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="site-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="nav" id="site-nav">
+                    <a class="nav-link" href="index.html">DOMŮ</a>
+                    <a class="nav-link" href="sluzby.html" aria-current="page">SLUŽBY</a>
+                    <a class="nav-link" href="kontakt.html">KONTAKT</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="sluzby">
+                <div class="container">
+                    <div class="sluzby-text">
+                        <h1>Porucha auta? Nechcete čekat v servisu?</h1>
+                        <h2>Přijedeme za Vámi a auto opravíme na místě.</h2>
+                    </div>
+
+                    <section class="sluzby-list">
+                        <div class="sluzby-list-inner">
+                            <div class="sluzby-side1">
+                                <h2>NAŠE SLUŽBY</h2>
+                                <section class="sluzby-seznam1">
+                                    <p>Opravy automobilů</p>
+                                    <p>Servisní práce</p>
+                                    <p>Autoelektrikářské práce</p>
+                                    <p>Diagnostika vozidel</p>
+                                    <p>Výměna autoskel</p>
+                                </section>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="sluzby-side2">
+                                <h2>PROČ SI VYBRAT NÁS</h2>
+                                <section class="sluzby-seznam2">
+                                    <p>Mobilita našich služeb</p>
+                                    <p>Rychlá oprava bez čekání</p>
+                                    <p>Férové ceny</p>
+                                    <p>Zkušenosti a praxe</p>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+
+                    <button class="sluzby-call" onclick="window.location.href='tel:+420736140887'" aria-label="Zavolat na číslo 736 140 887">ZAVOLAT</button>
+                </div>
+            </section>
+        </main>
+
+        <section class="car">
+            <img src="mcr_home_car.webp">
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-inner">
+                <a href="index.html" class="logo-footer">
+                    <img src="mcr_logo_footer.webp">
+                </a>
+            </div>
+        </footer>
+
+        <script>
+            const navToggle = document.querySelector('.nav-toggle');
+            const nav = document.querySelector('.nav');
+            const navLinks = nav.querySelectorAll('a');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('is-open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('is-open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+
+                    if (!href || href.startsWith('#') || this.target === '_blank') return;
+
+                    e.preventDefault();
+
+                    document.querySelector('main').classList.add('fade-out');
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 200);
+                });
+            });
+        </script>
+
+    </body>
+</html>
