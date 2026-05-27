@@ -68,22 +68,6 @@ main.fade-out {
   justify-content: space-between;
 }
 
-/*FOOTER*/
-.footer {
-  position: relative;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-
-.footer-inner {
-  height: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /*HEADER LOGO*/
 .logo-header {
   display: flex;
@@ -93,14 +77,6 @@ main.fade-out {
 .logo-header img {
   height: 30px;
   display: block;
-}
-
-/*FOOTER LOGO*/
-.logo-footer img {
-  height: 30px;
-  position: static;
-  display: flex;
-  align-items: center;
 }
 
 /*NAV MOBILE*/
@@ -429,7 +405,30 @@ main.fade-out {
   width: 72vw;
   max-width: 280px;
   height: auto;
-  margin-bottom: -6px;
+}
+
+/*FOOTER*/
+.footer {
+  position: relative;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  height: 64px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*FOOTER LOGO*/
+.logo-footer img {
+  height: 30px;
+  position: static;
+  display: flex;
+  align-items: center;
 }
 
 /*DESKTOP*/
