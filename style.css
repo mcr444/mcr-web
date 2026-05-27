@@ -178,9 +178,9 @@ main.fade-out {
   top: auto;
   left: auto;
   transform: none;
-  width: 82vw;
-  max-width: 300px;
-  margin: 10px auto 42px;
+  width: 76vw;
+  max-width: 270px;
+  margin: 24px auto 54px;
 }
 
 .homepage-number img {
@@ -212,7 +212,7 @@ main.fade-out {
   transform: none;
   width: calc(100% - 32px);
   max-width: 320px;
-  margin: 0 auto;
+  margin: 18px auto 0;
   text-align: center;
 }
 
@@ -231,7 +231,7 @@ main.fade-out {
 
 .homepage-call {
   display: block;
-  margin: 20px auto 28px;
+  margin: 42px auto 36px;
   padding: 14px 36px;
   font-size: 16px;
   letter-spacing: 2px;
@@ -578,7 +578,7 @@ main.fade-out {
 
   .homepage-call {
     position: relative;
-    top: 600px;
+    top: 550px;
     display: block;
     margin: 0 auto;
     padding: 20px 60px;
