@@ -178,8 +178,8 @@ main.fade-out {
   top: auto;
   left: auto;
   transform: none;
-  width: 76vw;
-  max-width: 250px;
+  width: 66vw;
+  max-width: 220px;
   margin: 30px auto 54px;
 }
 
@@ -578,7 +578,7 @@ main.fade-out {
 
   .homepage-call {
     position: relative;
-    top: 560px;
+    top: 570px;
     display: block;
     margin: 0 auto;
     padding: 20px 60px;
