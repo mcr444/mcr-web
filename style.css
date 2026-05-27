@@ -179,8 +179,8 @@ main.fade-out {
   left: auto;
   transform: none;
   width: 76vw;
-  max-width: 270px;
-  margin: 24px auto 54px;
+  max-width: 250px;
+  margin: 30px auto 54px;
 }
 
 .homepage-number img {
@@ -578,7 +578,7 @@ main.fade-out {
 
   .homepage-call {
     position: relative;
-    top: 550px;
+    top: 560px;
     display: block;
     margin: 0 auto;
     padding: 20px 60px;
