@@ -314,19 +314,25 @@ main.fade-out {
 }
 
 .sluzby-call {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 430px;
-  padding: 16px 36px;
-  font-size: 18px;
+  display: block;
+  margin: 24px auto 0;
+  padding: 14px 36px;
+  font-size: 16px;
   letter-spacing: 2px;
+  font-family: 'Manrope', sans-serif;
   background-color: #ee3031;
   color: #ffffff;
-  border-radius: 50px;
   border: none;
+  border-radius: 40px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+}
+
+.sluzby-call:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /*KONTAKT CONTENT*/
