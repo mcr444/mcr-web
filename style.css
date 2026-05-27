@@ -417,14 +417,19 @@ main.fade-out {
 }
 
 /*CAR*/
+.car {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .car img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 64px;
+  display: block;
   width: 72vw;
   max-width: 280px;
   height: auto;
+  margin-bottom: -6px;
 }
 
 /*DESKTOP*/
