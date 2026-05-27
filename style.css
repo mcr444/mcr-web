@@ -167,20 +167,20 @@ main.fade-out {
 
 /*HOMEPAGE CONTENT*/
 .homepage {
-  min-height: calc(100vh - 128px);
   background: #ebebeb;
   position: relative;
   overflow: hidden;
-  padding-bottom: 20px;
+  padding: 36px 0 24px;
 }
 
 .homepage-number {
-  position: absolute;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
   width: 82vw;
   max-width: 320px;
+  margin: 0 auto 42px;
 }
 
 .homepage-number img {
@@ -206,12 +206,13 @@ main.fade-out {
 }
 
 .homepage-text {
-  position: absolute;
-  top: 180px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
   width: calc(100% - 32px);
   max-width: 320px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -229,18 +230,23 @@ main.fade-out {
 }
 
 .homepage-call {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 430px;
+  display: block;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  margin: 42px auto 28px;
   padding: 16px 36px;
   font-size: 18px;
   letter-spacing: 2px;
+  font-family: 'Manrope', sans-serif;
   background-color: #ee3031;
   color: #ffffff;
   border-radius: 50px;
   border: none;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
 }
 
