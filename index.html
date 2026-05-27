@@ -23,7 +23,7 @@
         <header class="header">
             <div class="container header-inner">
                 <a href="index.html" class="logo-header">
-                    <img src="mcr_logo_header.webp" alt="mobile car rescue logo">
+                    <img src="mcr_logo2_header.webp" alt="mobile car rescue logo">
                 </a>
 
                 <button class="nav-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="site-nav">
@@ -51,7 +51,6 @@
                     <div class="homepage-text">
                         <h1>Servisní zásah v terénu i v garáži!</h1>
                         <h2>Zradilo Vás vozidlo na cestách nebo potřebujete servis?<br>
-                            <br>
                             Působíme v Královéhradeckém a Libereckém kraji - spojte se s námi.
                         </h2>
                     </div>
@@ -94,7 +93,7 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
 
-                    if (!href || href.startsWith('#') || this.target === '_blank') return;
+                    if (!href || href.startsWith('tel:') || this.target === '_blank') return;
 
                     e.preventDefault();
 

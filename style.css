@@ -68,22 +68,6 @@ main.fade-out {
   justify-content: space-between;
 }
 
-/*FOOTER*/
-.footer {
-  position: relative;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-
-.footer-inner {
-  height: 64px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 /*HEADER LOGO*/
 .logo-header {
   display: flex;
@@ -91,16 +75,8 @@ main.fade-out {
 }
 
 .logo-header img {
-  height: 30px;
+  height: 40px;
   display: block;
-}
-
-/*FOOTER LOGO*/
-.logo-footer img {
-  height: 30px;
-  position: static;
-  display: flex;
-  align-items: center;
 }
 
 /*NAV MOBILE*/
@@ -191,19 +167,20 @@ main.fade-out {
 
 /*HOMEPAGE CONTENT*/
 .homepage {
-  height: calc(100vh - 128px);
   background: #ebebeb;
   position: relative;
   overflow: hidden;
+  padding: 36px 0 24px;
 }
 
 .homepage-number {
-  position: absolute;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 82vw;
-  max-width: 320px;
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: 55vw;
+  max-width: 190px;
+  margin: 22px auto 72px;
 }
 
 .homepage-number img {
@@ -229,12 +206,13 @@ main.fade-out {
 }
 
 .homepage-text {
-  position: absolute;
-  top: 180px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
   width: calc(100% - 32px);
   max-width: 320px;
+  margin: 18px auto 0;
   text-align: center;
 }
 
@@ -252,38 +230,40 @@ main.fade-out {
 }
 
 .homepage-call {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 430px;
-  padding: 16px 36px;
-  font-size: 18px;
+  display: block;
+  margin: 40px auto 15px;
+  padding: 14px 36px;
+  font-size: 16px;
   letter-spacing: 2px;
+  font-family: 'Manrope', sans-serif;
   background-color: #ee3031;
   color: #ffffff;
-  border-radius: 50px;
   border: none;
+  border-radius: 40px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.3);
 }
 
 .homepage-call:hover {
   background-color: #000000;
   color: #ffffff;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
 
 /*SLUŽBY CONTENT*/
 .sluzby {
-  height: calc(100dvh - 128px);
   background: #ebebeb;
   position: relative;
   overflow: hidden;
-  padding: 60px 0 150px;
+  padding: 28px 0 10px;
 }
 
 .sluzby-text {
   max-width: 300px;
-  margin: 0 auto 20px;
+  margin: 0 auto 16px;
   padding: 0;
   text-align: center;
 }
@@ -308,7 +288,7 @@ main.fade-out {
 .sluzby-list-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 14px;
 }
 
 .sluzby-side1,
@@ -318,7 +298,7 @@ main.fade-out {
 
 .sluzby-side1 h2,
 .sluzby-side2 h2 {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   font-size: 17px;
   line-height: 1.2;
 }
@@ -331,7 +311,7 @@ main.fade-out {
 
 .sluzby-seznam1 p,
 .sluzby-seznam2 p {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
 .divider {
@@ -340,17 +320,32 @@ main.fade-out {
 
 .sluzby-call {
   display: block;
-  margin: 20px auto 0;
-  padding: 14px 30px;
+  margin: 40px auto 30px;
+  padding: 14px 36px;
   font-size: 16px;
   letter-spacing: 2px;
+  font-family: 'Manrope', sans-serif;
+  background-color: #ee3031;
+  color: #ffffff;
+  border: none;
   border-radius: 40px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sluzby-call:hover {
+  background-color: #000000;
+  color: #ffffff;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
 
 /*KONTAKT CONTENT*/
 .kontakt {
   min-height: calc(100dvh - 128px);
-  padding: 32px 0 150px;
+  padding: 32px 0 0px;
   background: #ebebeb;
 }
 
@@ -362,7 +357,7 @@ main.fade-out {
 
 .kontakt-head h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.25;
 }
 
@@ -405,7 +400,7 @@ main.fade-out {
 
 .kontakt-map {
   max-width: 360px;
-  margin: 24px auto 0;
+  margin: 0 auto 15px;
   overflow: hidden;
 }
 
@@ -429,7 +424,30 @@ main.fade-out {
   width: 72vw;
   max-width: 280px;
   height: auto;
-  margin-bottom: -6px;
+}
+
+/*FOOTER*/
+.footer {
+  position: relative;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  height: 64px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*FOOTER LOGO*/
+.logo-footer img {
+  height: 30px;
+  position: static;
+  display: flex;
+  align-items: center;
 }
 
 /*DESKTOP*/
@@ -529,7 +547,7 @@ main.fade-out {
 
   .homepage-number {
     position: absolute;
-    top: 120px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 900px;
@@ -563,11 +581,12 @@ main.fade-out {
   }
 
   .homepage-call {
-    top: 600px;
-    position: absolute;
+    position: relative;
+    top: 560px;
+    display: block;
+    margin: 0 auto;
     padding: 20px 60px;
     font-size: 30px;
-    font-family: 'Manrope', sans-serif;
     letter-spacing: 4px;
     background-color: #ee3031;
     color: #ffffff;
@@ -682,8 +701,8 @@ main.fade-out {
 
   /*KONTAKT CONTENT DESKTOP*/
   .kontakt {
-    min-height: calc(100vh - 128px);
-    padding: 80px 0 180px;
+    padding: 80px 0 0;
+    background: #ebebeb;
   }
 
   .kontakt-head {
@@ -713,11 +732,11 @@ main.fade-out {
 
   .kontakt-map {
     max-width: 900px;
-    margin-top: 32px;
+    margin: 32px auto 0;
   }
 
   .kontakt-map iframe {
-    height: 320px;
+    height: 500px;
     border-radius: 20px;
   }
 
@@ -727,6 +746,21 @@ main.fade-out {
     left: 50%;
     transform: translateX(-50%);
     bottom: 64px;
+    width: 75vw;
+    max-width: 900px;
+    height: auto;
+  }
+
+  main:has(.kontakt) + .car {
+    margin-top: -4px;
+    display: flex;
+    justify-content: center;
+    background: #ebebeb;
+  }
+
+  main:has(.kontakt) + .car img {
+    position: static;
+    transform: none;
     width: 75vw;
     max-width: 900px;
     height: auto;
