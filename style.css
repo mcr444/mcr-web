@@ -167,10 +167,11 @@ main.fade-out {
 
 /*HOMEPAGE CONTENT*/
 .homepage {
-  height: calc(100vh - 128px);
+  min-height: calc(100vh - 128px);
   background: #ebebeb;
   position: relative;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .homepage-number {
@@ -240,7 +241,7 @@ main.fade-out {
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
 }
 
 .homepage-call:hover {
