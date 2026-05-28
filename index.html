@@ -93,7 +93,7 @@
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
 
-                    if (!href || href.startsWith('#') || this.target === '_blank') return;
+                    if (!href || href.startsWith('tel:') || this.target === '_blank') return;
 
                     e.preventDefault();
 
