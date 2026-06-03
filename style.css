@@ -400,7 +400,7 @@ main.fade-out {
 
 .kontakt-map {
   max-width: 360px;
-  margin: 0;
+  margin: 0 auto 15px;
   overflow: hidden;
 }
 
@@ -582,7 +582,7 @@ main.fade-out {
 
   .homepage-call {
     position: relative;
-    top: 570px;
+    top: 560px;
     display: block;
     margin: 0 auto;
     padding: 20px 60px;
@@ -701,8 +701,8 @@ main.fade-out {
 
   /*KONTAKT CONTENT DESKTOP*/
   .kontakt {
-    min-height: calc(100vh - 128px);
-    padding: 80px 0 180px;
+    padding: 80px 0 0;
+    background: #ebebeb;
   }
 
   .kontakt-head {
@@ -732,11 +732,11 @@ main.fade-out {
 
   .kontakt-map {
     max-width: 900px;
-    margin-top: 32px;
+    margin: 32px auto 0;
   }
 
   .kontakt-map iframe {
-    height: 320px;
+    height: 500px;
     border-radius: 20px;
   }
 
@@ -746,6 +746,21 @@ main.fade-out {
     left: 50%;
     transform: translateX(-50%);
     bottom: 64px;
+    width: 75vw;
+    max-width: 900px;
+    height: auto;
+  }
+
+  main:has(.kontakt) + .car {
+    margin-top: -4px;
+    display: flex;
+    justify-content: center;
+    background: #ebebeb;
+  }
+
+  main:has(.kontakt) + .car img {
+    position: static;
+    transform: none;
     width: 75vw;
     max-width: 900px;
     height: auto;
