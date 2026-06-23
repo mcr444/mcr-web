@@ -7,19 +7,23 @@
 
 html, body {
   background: #ebebeb;
-  min-height: 100dvh;
   margin: 0;
   padding: 0;
+}
+
+html {
   overflow-x: hidden;
+  scrollbar-gutter: stable;
 }
 
 body {
+  min-height: 100dvh;
   margin: 0;
   font-family: 'Manrope', sans-serif;
   line-height: 1.5;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 main {
@@ -27,6 +31,7 @@ main {
   animation: pageFade 0.18s ease-out;
   opacity: 1;
   transition: opacity 0.18s ease;
+  padding-top: 64px;
 }
 
 main.fade-out {
@@ -53,9 +58,11 @@ main.fade-out {
 
 /*HEADER*/
 .header {
-  position: sticky;
+  position: fixed;
   background-color: #ffffff;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
@@ -453,14 +460,6 @@ main.fade-out {
 /*DESKTOP*/
 @media (min-width: 1024px) {
 
-  html, body {
-    background: #ebebeb;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
   body {
     margin: 0;
     font-family: 'Manrope', sans-serif;
@@ -525,6 +524,7 @@ main.fade-out {
     height: 100%;
     padding: 0 24px;
     font-size: 20px;
+    min-width: 130px;
   }
 
   .nav a:hover {
@@ -547,7 +547,7 @@ main.fade-out {
 
   .homepage-number {
     position: absolute;
-    top: 60px;
+    top: 90px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 900px;
@@ -561,7 +561,7 @@ main.fade-out {
 
   .homepage-text {
     position: absolute;
-    top: 330px;
+    top: 290px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 32px);
@@ -582,7 +582,7 @@ main.fade-out {
 
   .homepage-call {
     position: relative;
-    top: 560px;
+    top: 500px;
     display: block;
     margin: 0 auto;
     padding: 20px 60px;
@@ -635,7 +635,7 @@ main.fade-out {
     position: relative;
     top: 50px;
     margin: 0 auto;
-    max-width: 900px;   /* klíčové */
+    max-width: 900px;
   }
 
   .sluzby-list-inner {
