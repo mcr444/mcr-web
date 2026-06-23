@@ -7,19 +7,23 @@
 
 html, body {
   background: #ebebeb;
-  min-height: 100dvh;
   margin: 0;
   padding: 0;
+}
+
+html {
   overflow-x: hidden;
+  scrollbar-gutter: stable;
 }
 
 body {
+  min-height: 100dvh;
   margin: 0;
   font-family: 'Manrope', sans-serif;
   line-height: 1.5;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 main {
@@ -453,14 +457,6 @@ main.fade-out {
 /*DESKTOP*/
 @media (min-width: 1024px) {
 
-  html, body {
-    background: #ebebeb;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
   body {
     margin: 0;
     font-family: 'Manrope', sans-serif;
@@ -525,6 +521,7 @@ main.fade-out {
     height: 100%;
     padding: 0 24px;
     font-size: 20px;
+    min-width: 130px;
   }
 
   .nav a:hover {
@@ -547,7 +544,7 @@ main.fade-out {
 
   .homepage-number {
     position: absolute;
-    top: 60px;
+    top: 90px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 900px;
@@ -561,7 +558,7 @@ main.fade-out {
 
   .homepage-text {
     position: absolute;
-    top: 330px;
+    top: 290px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 32px);
@@ -582,7 +579,7 @@ main.fade-out {
 
   .homepage-call {
     position: relative;
-    top: 560px;
+    top: 500px;
     display: block;
     margin: 0 auto;
     padding: 20px 60px;
