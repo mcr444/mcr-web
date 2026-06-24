@@ -31,6 +31,7 @@ main {
   animation: pageFade 0.18s ease-out;
   opacity: 1;
   transition: opacity 0.18s ease;
+  padding-top: 64px;
 }
 
 main.fade-out {
@@ -57,9 +58,11 @@ main.fade-out {
 
 /*HEADER*/
 .header {
-  position: sticky;
+  position: fixed;
   background-color: #ffffff;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
@@ -632,7 +635,7 @@ main.fade-out {
     position: relative;
     top: 50px;
     margin: 0 auto;
-    max-width: 900px;   /* klíčové */
+    max-width: 900px;
   }
 
   .sluzby-list-inner {
