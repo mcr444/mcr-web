@@ -1,187 +1,126 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Mobilní autoservis. Nonstop 24/7 Královéhradcký a Liberecký kraj. Zavolejte ihned a smluvte si opravu ještě dnes.">
-        <meta name="keywords" content="autoservis, servis, oprava, diagnostika, Vrchlabí, Jilemnice, Trutnov, Jičín, Hradec Králové, Liberec">
-        <meta name="robots" content="all">
-        <meta name="author" content="yurkur">
-        <title>
-            Mobile Car Rescue - mobilní autoservis
-        </title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/png" sizes="32x32" href="mcr_icon_32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="mcr_icon_16.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="mcr_icon_apple.png">
-    </head>
 
-    <body>
-        <header class="header">
-            <div class="container header-inner">
-                <a href="index.html" class="logo-header">
-                    <img src="mcr_logo.webp" alt="Mobile Car Rescue">
-                </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mobilní autoservis. Nonstop 24/7 Královéhradcký a Liberecký kraj. Zavolejte ihned a smluvte si opravu ještě dnes.">
+    <meta name="keywords" content="autoservis, servis, oprava, diagnostika, Vrchlabí, Jilemnice, Trutnov, Jičín, Hradec Králové, Liberec">
+    <meta name="robots" content="all">
+    <meta name="author" content="yurkur">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mobile Car Rescue - mobilní autoservis">
+    <meta property="og:description" content="Mobilní autoservis v Královéhradeckém a Libereckém kraji.">
+    <meta property="og:image" content="https://mobilecarrescue.cz/mcr-thumb.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://mobilecarrescue.cz/">
+    <title>
+        Mobile Car Rescue - mobilní autoservis
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="mcr_icon_32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="mcr_icon_16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="mcr_icon_apple.png">
+</head>
 
-                <div class="header-actions">
-                    <nav class="nav" id="site-nav">
-                        <span class="nav-current-indicator" aria-hidden="true"></span>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo-header">
+                <img src="mcr_logo.webp" alt="Mobile Car Rescue">
+            </a>
 
-                        <a class="nav-link nav-home" href="index.html" aria-current="page">
-                            <img
-                                class="home-icon"
-                                src="home-icon.webp"
-                                alt=""
-                                width="28"
-                                height="28"
-                            >
-                            <span class="home-text">DOMŮ</span>
-                        </a>
+            <div class="header-actions">
+                <nav class="nav" id="site-nav">
+                    <span class="nav-current-indicator" aria-hidden="true"></span>
 
-                        <a class="nav-link" href="sluzby.html">SLUŽBY</a>
-                        <a class="nav-link" href="kontakt.html">KONTAKT</a>
-                    </nav>
-
-                    <a
-                        class="phone-button"
-                        href="tel:+420736140887"
-                        aria-label="Zavolat na číslo 736 140 887"
-                    >
-                        <img
-                            class="phone-icon"
-                            src="phone-icon.webp"
-                            alt=""
-                            width="28"
-                            height="28"
-                        >
-                        <span class="phone-number">736 140 887</span>
+                    <a class="nav-link nav-home" href="index.html" aria-current="page">
+                        <img class="home-icon" src="home-icon.webp" alt="" width="28" height="28">
+                        <span class="home-text">DOMŮ</span>
                     </a>
 
-                    <button
-                        class="nav-toggle"
-                        type="button"
-                        aria-label="Otevřít menu"
-                        aria-expanded="false"
-                        aria-controls="site-nav"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <main class="home-page">
-            <section class="hero-slideshow" aria-label="Ukázka mobilního autoservisu">
-                <img
-                    class="hero-slide is-active"
-                    src="slide-show1.webp"
-                    alt="Mobilní autoservis při servisním zásahu"
-                    fetchpriority="high"
-                >
-
-                <img
-                    class="hero-slide"
-                    src="slide-show2.webp"
-                    alt="Oprava vozidla v terénu"
-                    aria-hidden="true"
-                >
-
-                <img
-                    class="hero-slide"
-                    src="slide-show3.webp"
-                    alt="Oprava vozidla v terénu"
-                    aria-hidden="true"
-                >
-
-                <img
-                    class="hero-slide"
-                    src="slide-show4.webp"
-                    alt="Oprava vozidla v terénu"
-                    aria-hidden="true"
-                >
-
-                <img
-                    class="hero-slide"
-                    src="slide-show5.webp"
-                    alt="Oprava vozidla v terénu"
-                    aria-hidden="true"
-                >
-            </section>
-            <section class="home-intro">
-                <h1 class="home-title">
-                    Servisní zásah v terénu i v garáži!
-                </h1>
-
-                <div class="home-divider" aria-hidden="true"></div>
-
-                <p class="home-description">
-                    Jsme mobilní autoservis působící v Královéhradeckém a Libereckém kraji. <br>
-                    Ať už Vás vozidlo zradilo na cestách, nebo potřebujete běžný servis, obraťte se na nás.
-                </p>
-
-                <a
-                    class="service-map-link"
-                    href="kontakt.html"
-                    aria-label="Zobrazit oblast působnosti"
-                >
-                    <img
-                        class="service-map"
-                        src="map.webp"
-                        alt="Mapa působnosti mobilního autoservisu Mobile Car Rescue"
-                        loading="lazy"
-                    >
-                </a>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="container footer-inner">
-                <a class="footer-logo" href="index.html">
-                    <img
-                        src="mcr_logo.webp"
-                        alt="Mobile Car Rescue Logo"
-                    >
-                </a>
-
-                <nav class="footer-social" aria-label="Sociální sítě">
-                    <a
-                        class="social-link"
-                        href="https://www.instagram.com/dilnanakolech/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <img src="instagram-icon.webp" alt="Instagram Icon">
-                    </a>
-
-                    <a
-                        class="social-link"
-                        href="https://www.facebook.com/profile.php?id=61582230436288&locale=cs_CZ"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                    >
-                        <img src="facebook-icon.webp" alt="Facebook Icon">
-                    </a>
-
-                    <a
-                        class="social-link"
-                        href="https://www.firmy.cz/detail/13666910-mobile-car-rescue-vrchlabi-podhuri.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Firmy.cz"
-                    >
-                        <img src="firmy-icon.webp" alt="Firmy.cz Icon">
-                    </a>
+                    <a class="nav-link" href="sluzby.html">SLUŽBY</a>
+                    <a class="nav-link" href="kontakt.html">KONTAKT</a>
                 </nav>
-            </div>
-        </footer>
 
-        <script src="script.js"></script>
-    </body>
+                <a class="phone-button" href="tel:+420736140887" aria-label="Zavolat na číslo 736 140 887">
+                    <img class="phone-icon" src="phone-icon.webp" alt="" width="28" height="28">
+                    <span class="phone-number">736 140 887</span>
+                </a>
+
+                <button class="nav-toggle" type="button" aria-label="Otevřít menu" aria-expanded="false"
+                    aria-controls="site-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="home-page">
+        <section class="hero-slideshow" aria-label="Ukázka mobilního autoservisu">
+            <img class="hero-slide is-active" src="slide-show1.webp" alt="Mobilní autoservis při servisním zásahu"
+                fetchpriority="high">
+
+            <img class="hero-slide" src="slide-show2.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
+
+            <img class="hero-slide" src="slide-show3.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
+
+            <img class="hero-slide" src="slide-show4.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
+
+            <img class="hero-slide" src="slide-show5.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
+        </section>
+        <section class="home-intro">
+            <h1 class="home-title">
+                Servisní zásah v terénu i v garáži!
+            </h1>
+
+            <div class="home-divider" aria-hidden="true"></div>
+
+            <p class="home-description">
+                Jsme mobilní autoservis působící v Královéhradeckém a Libereckém kraji. <br>
+                Ať už Vás vozidlo zradilo na cestách, nebo potřebujete běžný servis, obraťte se na nás.
+            </p>
+
+            <a class="service-map-link" href="kontakt.html" aria-label="Zobrazit oblast působnosti">
+                <img class="service-map" src="map.webp" alt="Mapa působnosti mobilního autoservisu Mobile Car Rescue"
+                    loading="lazy">
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a class="footer-logo" href="index.html">
+                <img src="mcr_logo.webp" alt="Mobile Car Rescue Logo">
+            </a>
+
+            <nav class="footer-social" aria-label="Sociální sítě">
+                <a class="social-link" href="https://www.instagram.com/dilnanakolech/" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="instagram-icon.webp" alt="Instagram Icon">
+                </a>
+
+                <a class="social-link" href="https://www.facebook.com/profile.php?id=61582230436288&locale=cs_CZ"
+                    target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <img src="facebook-icon.webp" alt="Facebook Icon">
+                </a>
+
+                <a class="social-link"
+                    href="https://www.firmy.cz/detail/13666910-mobile-car-rescue-vrchlabi-podhuri.html" target="_blank"
+                    rel="noopener noreferrer" aria-label="Firmy.cz">
+                    <img src="firmy-icon.webp" alt="Firmy.cz Icon">
+                </a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
 </html>

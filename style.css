@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   background: #ededed;
   margin: 0;
   padding: 0;
@@ -401,8 +402,8 @@ body.page-leaving main {
   border-radius: 10px;
   cursor: zoom-in;
   transition:
-  transform 0.25s ease,
-  box-shadow 0.25s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .process-card img {
@@ -452,96 +453,6 @@ body.page-leaving main {
 
 .lightbox.is-closing .lightbox-image {
   animation: lightboxImageOut 0.2s ease-in forwards;
-}
-
-/*KONTAKT CONTENT*/
-.contact-map iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.contact-details {
-  width: 100%;
-  max-width: 420px;
-  margin-inline: auto;
-  padding: 60px 24px 120px;
-  text-align: center;
-}
-
-.contact-title {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.35;
-}
-
-.contact-address {
-  margin-top: 18px;
-}
-
-.contact-address-icon {
-  display: block;
-  width: 28px;
-  height: 28px;
-  margin-inline: auto;
-  object-fit: contain;
-}
-
-.contact-address p {
-  margin: 14px 0 0;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.contact-separator {
-  width: 100%;
-  max-width: 280px;
-  height: 2px;
-  margin: 40px auto 24px;
-  border: none;
-  background-color: #111111;
-}
-
-.contact-list {
-  width: 100%;
-  max-width: 280px;
-  margin: 40px auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  list-style: none;
-  text-align: left;
-}
-
-.contact-row {
-  display: grid;
-  grid-template-columns: 26px 1fr;
-  align-items: center;
-  gap: 12px;
-}
-
-.contact-row img {
-  display: block;
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-.contact-row a {
-  color: #000000;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.35;
-  text-decoration: none;
-  transition: color 0.22s ease;
-}
-
-.contact-row a:hover {
-  color: #ed3030;
 }
 
 @keyframes lightboxFadeIn {
@@ -632,7 +543,97 @@ body.lightbox-open {
   overscroll-behavior: none;
 }
 
-/* FOOTER */ 
+/*KONTAKT CONTENT*/
+.contact-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.contact-details {
+  width: 100%;
+  max-width: 420px;
+  margin-inline: auto;
+  padding: 60px 24px 120px;
+  text-align: center;
+}
+
+.contact-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.contact-address {
+  margin-top: 18px;
+}
+
+.contact-address-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.contact-address p {
+  margin: 14px 0 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.contact-separator {
+  width: 100%;
+  max-width: 280px;
+  height: 2px;
+  margin: 40px auto 24px;
+  border: none;
+  background-color: #111111;
+}
+
+.contact-list {
+  width: 100%;
+  max-width: 280px;
+  margin: 40px auto 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  list-style: none;
+  text-align: left;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-row img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.contact-row a {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+  transition: color 0.22s ease;
+}
+
+.contact-row a:hover {
+  color: #ed3030;
+}
+
+/* FOOTER */
 .footer {
   width: 100%;
   margin-top: auto;
@@ -767,8 +768,8 @@ body.lightbox-open {
 
   .nav-current-indicator.is-animated {
     transition:
-        left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-        width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      left 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .home-icon {
@@ -777,14 +778,7 @@ body.lightbox-open {
     height: 28px;
     object-fit: contain;
     filter:
-        brightness(1)
-        saturate(1)
-        invert(0)
-        sepia(0)
-        saturate(1)
-        hue-rotate(0deg)
-        brightness(1)
-        contrast(1);
+      brightness(1) saturate(1) invert(0) sepia(0) saturate(1) hue-rotate(0deg) brightness(1) contrast(1);
 
     transition: filter 0.22s ease;
   }
@@ -792,14 +786,7 @@ body.lightbox-open {
   .nav-home:hover .home-icon,
   .nav-home[aria-current="page"] .home-icon {
     filter:
-        brightness(0)
-        saturate(100%)
-        invert(24%)
-        sepia(91%)
-        saturate(2753%)
-        hue-rotate(347deg)
-        brightness(102%)
-        contrast(86%);
+      brightness(0) saturate(100%) invert(24%) sepia(91%) saturate(2753%) hue-rotate(347deg) brightness(102%) contrast(86%);
   }
 
   .home-text {
@@ -887,7 +874,7 @@ body.lightbox-open {
   }
 
   .service-map {
-  transition: transform 0.25s ease;
+    transition: transform 0.25s ease;
   }
 
   .service-map-link:hover .service-map {
@@ -898,6 +885,7 @@ body.lightbox-open {
   .services-page {
     padding: 100px 32px 80px;
   }
+
   .services-title {
     max-width: 1100px;
     margin-inline: auto;
@@ -1043,8 +1031,8 @@ body.lightbox-open {
     order: 4;
     width: 100%;
     max-width: 400px;
-    margin: 22px auto 0;
-    gap: 24px;
+    margin: 16px auto 0;
+    gap: 16px;
   }
 
   .contact-row {
