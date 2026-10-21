@@ -1,246 +1,237 @@
-const navToggle = document.querySelector(".nav-toggle");
-const nav = document.querySelector("#site-nav");
-
-navToggle.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("is-open");
-
-    navToggle.setAttribute("aria-expanded", isOpen);
-    navToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Zavřít menu" : "Otevřít menu"
-    );
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('#navigation');
+function closeMenu() {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Otevřít menu');
+    nav.classList.remove('open');
+}
+toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Zavřít menu' : 'Otevřít menu');
+    nav.classList.toggle('open', open);
 });
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMenu();
+});
+document.addEventListener('click', e => {
+    if (!e.target.closest('.header')) closeMenu();
+});
+const observer = new IntersectionObserver(
+    entries => {
+        for (const entry of entries) {
+            if (entry.isIntersecting) {
+                nav.querySelectorAll('a').forEach(a => {
+                    if (a.hash === '#' + entry.target.id)
+                        a.setAttribute('aria-current', 'location');
+                    else a.removeAttribute('aria-current');
+                });
+            }
+        }
+    },
+    { rootMargin: '-15% 0px -65% 0px', threshold: 0 }
+);
+document.querySelectorAll('main section[id]').forEach(s => observer.observe(s));
+const dialog = document.querySelector('#details');
+function showDetails(title, content, note = '') {
+    dialog.querySelector('h2').textContent = title;
+    const body = dialog.querySelector('.dialog-content');
+    body.replaceChildren();
+    if (typeof content === 'string') {
+        const p = document.createElement('p');
+        p.textContent = content;
+        body.append(p);
+    } else {
+        body.append(content);
+    }
+    if (note) {
+        const p = document.createElement('p');
+        p.className = 'dialog-note';
+        p.textContent = note;
+        body.append(p);
+    }
+    dialog.showModal();
+    dialog.scrollTop = 0;
+    document.body.classList.add('modal-open');
 
-nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Otevřít menu");
+    serviceOpeningFrame = requestAnimationFrame(() => {
+        serviceOpeningFrame = requestAnimationFrame(() => {
+            if (dialog.open && !serviceClosing) {
+                dialog.classList.add('is-visible');
+            }
+        });
     });
-});
+}
+document.querySelectorAll('[data-service]').forEach(button =>
+    button.addEventListener('click', () => {
+        const article = button.closest('article');
+        const template = document.querySelector('#service-details-' + button.dataset.service);
+        showDetails(article.querySelector('h3').textContent, template.content.cloneNode(true));
+    })
+);
+let serviceClosing = false;
+let serviceOpeningFrame;
 
-const pageNav = document.querySelector("#site-nav");
-const currentIndicator = pageNav?.querySelector(".nav-current-indicator");
-const pageNavLinks = pageNav
-    ? Array.from(pageNav.querySelectorAll(".nav-link"))
-    : [];
+function closeServiceModal() {
+    if (!dialog.open || serviceClosing) return;
 
-function setIndicatorPosition(link) {
-    if (!link || !currentIndicator) return;
+    serviceClosing = true;
+    cancelAnimationFrame(serviceOpeningFrame);
+    dialog.classList.remove('is-visible');
 
-    currentIndicator.style.left = `${link.offsetLeft}px`;
-    currentIndicator.style.width = `${link.offsetWidth}px`;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    setTimeout(
+        () => {
+            dialog.close();
+        },
+        reducedMotion ? 0 : 250
+    );
 }
 
-pageNavLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-        if (
-            event.ctrlKey ||
-            event.metaKey ||
-            event.shiftKey ||
-            link.target === "_blank"
-        ) {
-            return;
-        }
+// Křížek
+dialog.querySelector('.close-dialog').addEventListener('click', closeServiceModal);
 
-        const currentLink = pageNav.querySelector(
-            '.nav-link[aria-current="page"]'
-        );
-
-        const currentIndex = pageNavLinks.indexOf(currentLink);
-
-        if (currentIndex !== -1 && link !== currentLink) {
-            sessionStorage.setItem(
-                "previousNavIndex",
-                String(currentIndex)
-            );
-        } else {
-            sessionStorage.removeItem("previousNavIndex");
-        }
-    });
+// Escape
+dialog.addEventListener('cancel', event => {
+    event.preventDefault();
+    closeServiceModal();
 });
 
-function initializeCurrentIndicator() {
+// Kliknutí mimo okno
+dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+
+    const rect = dialog.getBoundingClientRect();
+
     if (
-        !pageNav ||
-        !currentIndicator ||
-        window.innerWidth < 1024
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
     ) {
-        return;
+        closeServiceModal();
     }
+});
 
-    const currentLink = pageNav.querySelector(
-        '.nav-link[aria-current="page"]'
-    );
+dialog.addEventListener('close', () => {
+    cancelAnimationFrame(serviceOpeningFrame);
+    dialog.classList.remove('is-visible');
+    document.body.classList.remove('modal-open');
+    serviceClosing = false;
+});
+const photoModal = document.querySelector('.photo-modal');
+const photoModalImage = photoModal.querySelector('.photo-modal-image');
+const photoModalClose = photoModal.querySelector('.photo-modal-close');
 
-    if (!currentLink) return;
+let photoClosing = false;
+let photoOpeningFrame;
 
-    const storedIndex = sessionStorage.getItem("previousNavIndex");
+document.querySelectorAll('.gallery-photo').forEach(button => {
+    button.addEventListener('click', () => {
+        const image = button.querySelector('img');
 
-    const previousLink =
-        storedIndex !== null
-            ? pageNavLinks[Number(storedIndex)]
-            : null;
+        photoModalImage.src = image.currentSrc || image.src;
+        photoModalImage.alt = image.alt;
 
-    if (previousLink && previousLink !== currentLink) {
-        setIndicatorPosition(previousLink);
+        photoModal.showModal();
+        document.body.classList.add('modal-open');
 
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                currentIndicator.classList.add("is-animated");
-                setIndicatorPosition(currentLink);
+        photoOpeningFrame = requestAnimationFrame(() => {
+            photoOpeningFrame = requestAnimationFrame(() => {
+                if (!photoClosing && photoModal.open) {
+                    photoModal.classList.add('is-visible');
+                }
             });
         });
-    } else {
-        setIndicatorPosition(currentLink);
-    }
+    });
+});
 
-    sessionStorage.removeItem("previousNavIndex");
+function closePhotoModal() {
+    if (!photoModal.open || photoClosing) return;
+
+    photoClosing = true;
+    cancelAnimationFrame(photoOpeningFrame);
+    photoModal.classList.remove('is-visible');
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    setTimeout(
+        () => {
+            photoModal.close();
+        },
+        reducedMotion ? 0 : 250
+    );
 }
 
-window.addEventListener("load", initializeCurrentIndicator);
+photoModalClose.addEventListener('click', closePhotoModal);
 
-window.addEventListener("resize", () => {
-    if (window.innerWidth < 1024) return;
-
-    const currentLink = pageNav?.querySelector(
-        '.nav-link[aria-current="page"]'
-    );
-
-    currentIndicator?.classList.remove("is-animated");
-    setIndicatorPosition(currentLink);
+photoModal.addEventListener('cancel', event => {
+    event.preventDefault();
+    closePhotoModal();
 });
 
-document.addEventListener("click", (event) => {
-    const link = event.target.closest("a");
+photoModal.addEventListener('click', event => {
+    if (event.target !== photoModal) return;
 
-    if (!link) return;
-
-    const href = link.getAttribute("href");
+    const rect = photoModal.getBoundingClientRect();
 
     if (
-        !href ||
-        href.startsWith("#") ||
-        href.startsWith("tel:") ||
-        href.startsWith("mailto:") ||
-        link.target === "_blank" ||
-        link.hasAttribute("download") ||
-        event.ctrlKey ||
-        event.metaKey ||
-        event.shiftKey
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
     ) {
-        return;
+        closePhotoModal();
     }
-
-    const destination = new URL(link.href, window.location.href);
-
-    if (destination.origin !== window.location.origin) {
-        return;
-    }
-
-    if (destination.href === window.location.href) {
-        return;
-    }
-
-    event.preventDefault();
-
-    document.body.classList.add("page-leaving");
-
-    setTimeout(() => {
-        window.location.href = destination.href;
-    }, 180);
 });
 
-(() => {
-    const slides = document.querySelectorAll(".hero-slide");
+photoModal.addEventListener('close', () => {
+    cancelAnimationFrame(photoOpeningFrame);
+    photoModal.classList.remove('is-visible');
+    document.body.classList.remove('modal-open');
+    photoClosing = false;
+});
+
+const slideshowReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+);
+
+document.querySelectorAll('.service-slideshow').forEach(async slideshow => {
+    const images = [...slideshow.querySelectorAll('img')];
+    const loaded = await Promise.all(
+        images.map(async image => {
+            try {
+                await image.decode();
+                return image;
+            } catch {
+                return null;
+            }
+        })
+    );
+
+    const slides = loaded.filter(Boolean);
+    if (!slides.length) return;
+
+    let current = 0;
+    slides[current].classList.add('is-active');
+    slideshow.classList.add('is-ready');
 
     if (slides.length < 2) return;
 
-    let activeSlide = 0;
+    setInterval(() => {
+        if (document.hidden || slideshowReducedMotion.matches) return;
 
-    function showNextSlide() {
-        slides[activeSlide].classList.remove("is-active");
-        slides[activeSlide].setAttribute("aria-hidden", "true");
+        const previous = slides[current];
 
-        activeSlide = (activeSlide + 1) % slides.length;
+        previous.classList.add('is-previous');
+        previous.classList.remove('is-active');
 
-        slides[activeSlide].classList.add("is-active");
-        slides[activeSlide].removeAttribute("aria-hidden");
-    }
-
-    setInterval(showNextSlide, 5000);
-})();
-
-(() => {
-    const lightbox = document.querySelector("#service-lightbox");
-    const lightboxImage = lightbox?.querySelector(".lightbox-image");
-    const closeButton = lightbox?.querySelector(".lightbox-close");
-    const processCards = document.querySelectorAll(".process-card");
-
-    if (!lightbox || !lightboxImage || !closeButton) return;
-
-    const closeDuration = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches
-        ? 0
-        : 200;
-
-    let closeTimer;
-
-    processCards.forEach((card) => {
-        card.addEventListener("click", () => {
-            const thumbnail = card.querySelector("img");
-            const fullImage = card.dataset.full || thumbnail?.src;
-
-            if (!fullImage) return;
-
-            lightboxImage.src = fullImage;
-            lightboxImage.alt = thumbnail?.alt || "";
-
-            lightbox.classList.remove("is-closing");
-            lightbox.showModal();
-
-            document.documentElement.classList.add("lightbox-open");
-            document.body.classList.add("lightbox-open");
-        });
-    });
-
-    function closeLightbox() {
-        if (
-            !lightbox.open ||
-            lightbox.classList.contains("is-closing")
-        ) {
-            return;
-        }
-
-        lightbox.classList.add("is-closing");
-
-        closeTimer = setTimeout(() => {
-            lightbox.close();
-        }, closeDuration);
-    }
-
-    closeButton.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (event) => {
-        if (event.target === lightbox) {
-            closeLightbox();
-        }
-    });
-
-    lightbox.addEventListener("cancel", (event) => {
-        event.preventDefault();
-        closeLightbox();
-    });
-
-    lightbox.addEventListener("close", () => {
-        clearTimeout(closeTimer);
-        lightbox.classList.remove("is-closing");
-
-        document.documentElement.classList.remove("lightbox-open");
-        document.body.classList.remove("lightbox-open");
-
-        lightboxImage.src = "";
-        lightboxImage.alt = "";
-    });
-})();
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('is-active');
+        setTimeout(() => {
+            previous.classList.remove('is-previous');
+        }, 650);
+    }, 3000);
+});

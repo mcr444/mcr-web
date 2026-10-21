@@ -1,126 +1,402 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mobilní autoservis. Nonstop 24/7 Královéhradcký a Liberecký kraj. Zavolejte ihned a smluvte si opravu ještě dnes.">
-    <meta name="keywords" content="autoservis, servis, oprava, diagnostika, Vrchlabí, Jilemnice, Trutnov, Jičín, Hradec Králové, Liberec">
-    <meta name="robots" content="all">
-    <meta name="author" content="yurkur">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mobile Car Rescue - mobilní autoservis">
-    <meta property="og:description" content="Mobilní autoservis v Královéhradeckém a Libereckém kraji.">
-    <meta property="og:image" content="https://mobilecarrescue.cz/mcr-thumb.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://mobilecarrescue.cz/">
-    <title>
-        Mobile Car Rescue - mobilní autoservis
-    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Car Rescue | Mobilní autoservis</title>
+    <meta name="description"
+        content="Mobilní autoservis pro Královéhradecký a Liberecký kraj. Servisní práce, opravy vozidel, autoelektrika, diagnostika a autoskla.">
+    <link rel="icon" href="logo.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="mcr_icon_32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="mcr_icon_16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="mcr_icon_apple.png">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header class="header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo-header">
-                <img src="mcr_logo.webp" alt="Mobile Car Rescue">
-            </a>
+    <a class="skip" href="#sluzby">Přejít k obsahu</a>
+    <header class="header wrap"><a class="brand" href="#home" aria-label="Mobile Car Rescue – úvod">
+            <img src="logo.webp" alt="Mobile Car Rescue" width="150" height="68">
+        </a>
+        <nav id="navigation" aria-label="Hlavní navigace">
+            <a href="#sluzby">SLUŽBY</a>
+            <a href="#cenik">CENÍK</a>
+            <a href="#reference">REFERENCE</a>
+            <a href="#fotogalerie">FOTOGALERIE</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
+        <a class="header-call button" href="tel:+420736140887">
+            <img src="phone.webp" alt="">
+            <span>736 140 887</span>
+        </a>
+        <button class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="navigation">
+            <span>
 
-            <div class="header-actions">
-                <nav class="nav" id="site-nav">
-                    <span class="nav-current-indicator" aria-hidden="true"></span>
+            </span>
+            <span>
 
-                    <a class="nav-link nav-home" href="index.html" aria-current="page">
-                        <img class="home-icon" src="home-icon.webp" alt="" width="28" height="28">
-                        <span class="home-text">DOMŮ</span>
+            </span>
+            <span>
+
+            </span>
+        </button>
+    </header>
+    <main>
+        <section class="intro" id="home">
+            <div class="intro-inner wrap">
+                <div class="intro-copy">
+                    <h1>Servisní zásah
+                        <br>
+                        <span>v terénu i v garáži!</span>
+                    </h1>
+                    <a class="mobile-call button" href="tel:+420736140887">
+                        <img src="phone.webp" alt="">736 140 887
                     </a>
+                    <hr>
+                    <p>Jsme mobilní autoservis působící v Královéhradeckém a Libereckém kraji. Ať už Vás vozidlo zradilo
+                        na cestách, nebo potřebujete běžný servis, obraťte se na nás.</p>
+                </div>
+                <img class="region" src="region.webp" alt="Působíme v Královéhradeckém a Libereckém kraji" width="426"
+                    height="242">
+            </div>
+        </section>
 
-                    <a class="nav-link" href="sluzby.html">SLUŽBY</a>
-                    <a class="nav-link" href="kontakt.html">KONTAKT</a>
-                </nav>
+        <section class="wrap services" id="sluzby">
+            <div class="section-heading">
+                <h2>Naše služby</h2>
+                <p>Poradíme si se vším. Sjednejte si opravu ještě dnes!</p>
+            </div>
+            <article class="service">
+                <div class="service-photo placeholder service-slideshow" role="img" aria-label="Servisní práce">
+                    <img src="service-photo1.webp" alt="">
+                    <img src="service-photo1-2.webp" alt="">
+                    <img src="service-photo1-1.webp" alt="">
+                    <img src="service-photo1-3.webp" alt="">
+                </div>
+                <div class="service-copy">
+                    <h3>Servisní práce</h3>
+                    <p>Servisní a opravárenské práce přímo u zákazníka. Mobilní servis umožňuje provést řadu běžných
+                        oprav a údržby vozidla bez nutnosti návštěvy klasického autoservisu.</p>
+                    <button class="button" data-service="1">PODROBNOSTI SLUŽEB</button>
+                </div>
+            </article>
+            <article class="service">
+                <div class="service-photo placeholder service-slideshow" role="img" aria-label="Opravy vozidel">
+                    <img src="service-photo2.webp" alt="">
+                    <img src="service-photo2-1.webp" alt="">
+                    <img src="service-photo2-3.webp" alt="">
+                    <img src="service-photo2-2.webp" alt="">
+                </div>
+                <div class="service-copy">
+                    <h3>Opravy vozidel</h3>
+                    <p>Mechanické opravy vozidel přímo u zákazníka. Podle charakteru závady je možné řadu oprav vyřešit
+                        na místě bez nutnosti převozu vozidla do klasického autoservisu.</p><button class="button"
+                        data-service="2">PODROBNOSTI SLUŽEB</button>
+                </div>
+            </article>
+            <article class="service">
+                <div class="service-photo placeholder" role="img" aria-label="Autoelektrikářské práce">
+                    <img src="service-photo3.webp">
+                </div>
+                <div class="service-copy">
+                    <h3>Autoelektrikářské práce</h3>
+                    <p>Diagnostika a opravy elektrických a elektronických systémů vozidel přímo u zákazníka za použití
+                        profesionálního diagnostického a měřicího vybavení.</p><button class="button"
+                        data-service="3">PODROBNOSTI SLUŽEB</button>
+                </div>
+            </article>
+            <article class="service">
+                <div class="service-photo placeholder service-slideshow" role="img" aria-label="Diagnostika vozidel">
+                    <img src="service-photo4.webp" alt="">
+                    <img src="service-photo4-1.webp" alt="">
+                </div>
+                <div class="service-copy">
+                    <h3>Diagnostika vozidel</h3>
+                    <p>Profesionální diagnostika vozidel přímo u zákazníka s využitím specializovaného diagnostického a
+                        měřicího vybavení.</p><button class="button" data-service="4">PODROBNOSTI SLUŽEB</button>
+                </div>
+            </article>
+            <article class="service">
+                <div class="service-photo placeholder service-slideshow" role="img" aria-label="Autoskla">
+                    <img src="service-photo5.webp" alt="">
+                    <img src="gallery9.webp" alt="">
+                    <img src="service-photo5-2.webp" alt="">
+                </div>
+                <div class="service-copy">
+                    <h3>Autoskla</h3>
+                    <p>Výměny a montáže autoskel přímo u zákazníka podle typu vozidla a konkrétního provedení skla.</p>
+                    <button class="button" data-service="5">PODROBNOSTI SLUŽEB</button>
+                </div>
+            </article>
+        </section>
 
-                <a class="phone-button" href="tel:+420736140887" aria-label="Zavolat na číslo 736 140 887">
-                    <img class="phone-icon" src="phone-icon.webp" alt="" width="28" height="28">
-                    <span class="phone-number">736 140 887</span>
-                </a>
+        <section class="wrap pricing" id="cenik">
+            <div class="section-heading">
+                <h2>Ceník služeb</h2>
+                <p>Přehledný ceník orientačních cen za nejčastější práce.</p>
+            </div>
+            <div class="price-placeholder placeholder">
+                <div>
+                    <h3>Ceník připravujeme</h3>
+                    <p>Pro cenu konkrétní opravy nás kontaktujte.</p><a href="tel:+420736140887">+420 736 140 887</a>
+                </div>
+            </div>
+        </section>
 
-                <button class="nav-toggle" type="button" aria-label="Otevřít menu" aria-expanded="false"
-                    aria-controls="site-nav">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <section class="references" id="reference">
+            <div class="section-heading">
+                <h2>Reference našich klientů</h2>
+                <p>Spokojenost našich zákazníků je pro nás hlavní prioritou.</p>
+            </div>
+            <div class="review-row">
+                <!-- Levá recenze -->
+                <article class="review review-side">
+                    <div class="stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+                    <p>Skvělý přístup, co slíbil to udělal, termín, servis,
+                        převzetí a odevzdání vozu, vše v pohodě, což dnes
+                        není zdaleka běžné. Zbývá jen poděkovat.</p>
+                    <span>Jiří Hofman</span>
+                </article>
+
+                <!-- Prostřední recenze -->
+                <article class="review">
+                    <div class="stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+                    <p>Naprostá spokojenost ve všech ohledech!</p>
+                    <span>Matěj Paděra</span>
+                </article>
+
+                <!-- Pravá recenze -->
+                <article class="review review-side">
+                    <div class="stars" aria-label="5 z 5 hvězdiček">★★★★★</div>
+                    <p>Frajer je nejspolehlivější mechanik široko daleko. Jak řekne, tak bude. Poradí si snad se vším a
+                        i cenově je úplně normální. Velmi doporučuju !!</p>
+                    <span>Josef Škumát</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="wrap gallery" id="fotogalerie">
+            <div class="section-heading">
+                <h2>Fotogalerie</h2>
+                <p>Podívejte se jak to může vypadat přímo v akci.</p>
+            </div>
+            <div class="gallery-grid">
+                <button class="gallery-photo" type="button">
+                    <img src="gallery1.webp" alt="Servis vozidla v terénu" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery2.webp" alt="Vybavení servisu" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery3.webp" alt="Vozidlo servisu" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery4.webp" alt="Servis vozidla v terénu" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery5.webp" alt="Diagnostika vozidla" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery6.webp" alt="Vozidlo servisu" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery7.webp" alt="Vozidlo servisu" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery8.webp" alt="Vozidlo servisu" loading="lazy">
+                </button>
+
+                <button class="gallery-photo" type="button">
+                    <img src="gallery9.webp" alt="Vozidlo servisu" loading="lazy">
                 </button>
             </div>
-        </div>
-    </header>
-
-    <main class="home-page">
-        <section class="hero-slideshow" aria-label="Ukázka mobilního autoservisu">
-            <img class="hero-slide is-active" src="slide-show1.webp" alt="Mobilní autoservis při servisním zásahu"
-                fetchpriority="high">
-
-            <img class="hero-slide" src="slide-show2.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
-
-            <img class="hero-slide" src="slide-show3.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
-
-            <img class="hero-slide" src="slide-show4.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
-
-            <img class="hero-slide" src="slide-show5.webp" alt="Oprava vozidla v terénu" aria-hidden="true">
         </section>
-        <section class="home-intro">
-            <h1 class="home-title">
-                Servisní zásah v terénu i v garáži!
-            </h1>
 
-            <div class="home-divider" aria-hidden="true"></div>
-
-            <p class="home-description">
-                Jsme mobilní autoservis působící v Královéhradeckém a Libereckém kraji. <br>
-                Ať už Vás vozidlo zradilo na cestách, nebo potřebujete běžný servis, obraťte se na nás.
-            </p>
-
-            <a class="service-map-link" href="kontakt.html" aria-label="Zobrazit oblast působnosti">
-                <img class="service-map" src="map.webp" alt="Mapa působnosti mobilního autoservisu Mobile Car Rescue"
-                    loading="lazy">
+        <section class="wrap contact" id="kontakt">
+            <div class="section-heading">
+                <h2>Kontakt</h2>
+                <p>Můžete se s námi spojit kdykoliv, kvůli čemukoliv.</p>
+            </div>
+            <a class="call-banner" href="tel:+420736140887">
+                <div>
+                    <span>Zavolejte nám pro okamžitou pomoc</span>
+                    <strong>+420 736 140 887</strong>
+                </div>
+                <img src="phone.webp" alt="" width="40" height="40">
             </a>
+            <div class="contact-links">
+                <a href="mailto:info@mobilecarrescue.cz">info@mobilecarrescue.cz</a>
+                <a class="social-link" href="https://www.instagram.com/dilnanakolech/" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="instagram.webp" alt="">
+                </a>
+                <a class="social-link" href="https://www.facebook.com/profile.php?id=61582230436288&locale=cs_CZ"
+                    target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <img src="facebook.webp" alt="">
+                </a>
+            </div>
+            <div class="map-placeholder">
+                <iframe
+                    src="https://www.google.com/maps?q=V+z%C3%A1ti%C5%A1%C3%AD+458,+543+03+Vrchlab%C3%AD&output=embed"
+                    title="Mapa – Mobile Car Rescue" width="100%" height="100%" style="border: 0; display: block;"
+                    loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="address">
+                <img src="home.webp" alt="" width="34" height="34">
+                <p>V zátiší 458, 543 03 Vrchlabí, Podhůří</p>
+            </div>
+
+            <div class="partners">
+                <h3>Partneři</h3>
+
+                <a href="https://www.autoklice24.cz" target="_blank" rel="noopener noreferrer"
+                    aria-label="Autoklíče24 – otevřít web">
+                    <img src="autoklice24.webp" alt="Logo Autoklíče24" loading="lazy">
+                </a>
+            </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-inner">
-            <a class="footer-logo" href="index.html">
-                <img src="mcr_logo.webp" alt="Mobile Car Rescue Logo">
-            </a>
-
-            <nav class="footer-social" aria-label="Sociální sítě">
-                <a class="social-link" href="https://www.instagram.com/dilnanakolech/" target="_blank"
-                    rel="noopener noreferrer" aria-label="Instagram">
-                    <img src="instagram-icon.webp" alt="Instagram Icon">
+    <footer>
+        <div class="wrap footer-main">
+            <div>
+                <h2>Mobile Car Rescue</h2>
+                <p>Mobilní autoservis pro Královéhradecký a Liberecký kraj.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#home">
+                    <img src="logo.webp" alt="Mobile Car Rescue" width="150" height="68" loading="lazy">
                 </a>
-
-                <a class="social-link" href="https://www.facebook.com/profile.php?id=61582230436288&locale=cs_CZ"
-                    target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <img src="facebook-icon.webp" alt="Facebook Icon">
-                </a>
-
-                <a class="social-link"
-                    href="https://www.firmy.cz/detail/13666910-mobile-car-rescue-vrchlabi-podhuri.html" target="_blank"
-                    rel="noopener noreferrer" aria-label="Firmy.cz">
-                    <img src="firmy-icon.webp" alt="Firmy.cz Icon">
-                </a>
-            </nav>
+                <nav aria-label="Navigace v patičce">
+                    <a href="#sluzby">SLUŽBY</a>
+                    <a href="#cenik">CENÍK</a>
+                    <a href="#reference">REFERENCE</a>
+                    <a href="#fotogalerie">FOTOGALERIE</a>
+                    <a href="#kontakt">KONTAKT</a>
+                </nav>
+            </div>
+            <p class="author">Vytvořil Jiří Hendrych</p>
+            <div class="copyright">
+                <span>© 2026 Mobile Car Rescue – Vojtěch Ludvík, IČO 10777067</span>
+                <span>Všechna práva vyhrazena</span>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <dialog id="details" aria-labelledby="details-title">
+        <button class="close-dialog" aria-label="Zavřít">×</button>
+        <h2 id="details-title"></h2>
+        <div class="dialog-content">
+
+        </div>
+        <a class="button" href="tel:+420736140887">ZAVOLAT +420 736 140 887</a>
+    </dialog>
+    <template id="service-details-1">
+        <p>Provádím servisní a opravárenské práce přímo u zákazníka. Mobilní servis umožňuje provést řadu běžných oprav
+            a údržby vozidla bez nutnosti návštěvy klasického autoservisu.</p>
+        <ul>
+            <li>Kontrola vozidla před STK</li>
+            <li>Výjezd k nepojízdnému vozidlu</li>
+            <li>Servis firemních vozových parků</li>
+            <li>Výměna kol</li>
+            <li>Výměna rozvodových řemenů a napínacích kladek</li>
+            <li>Výměna zapalovacích a žhavicích svíček</li>
+            <li>Výměna brzdových destiček</li>
+            <li>Výměna brzdových kotoučů</li>
+            <li>Výměna brzdové kapaliny</li>
+            <li>Výměna chladicí kapaliny</li>
+        </ul>
+        <p>Servis a opravy provádím podle technických postupů a s ohledem na konkrétní typ a stav vozidla.</p>
+    </template>
+    <template id="service-details-2">
+        <p>Provádím mechanické opravy vozidel přímo u zákazníka. Podle charakteru závady je možné řadu oprav vyřešit na
+            místě bez nutnosti převozu vozidla do klasického autoservisu.</p>
+        <ul>
+            <li>Opravy brzdového systému</li>
+            <li>Opravy a výměny dílů podvozku</li>
+            <li>Opravy chladicího systému</li>
+            <li>Opravy palivové soustavy</li>
+            <li>Opravy závad motoru</li>
+            <li>Výměny vadných snímačů a čidel</li>
+            <li>Výměny hadic, těsnění a drobných součástí</li>
+            <li>Opravy problémů se startováním vozidla</li>
+            <li>Opravy závad zjištěných diagnostikou</li>
+            <li>Drobné mechanické opravy přímo na místě</li>
+            <li>Výměna poškozených nebo opotřebených dílů</li>
+            <li>Nouzové opravy nepojízdného vozidla</li>
+        </ul>
+        <p>Před samotnou opravou se snažím nejprve přesně určit příčinu závady, aby se zbytečně neměnily díly, které
+            jsou v pořádku.</p>
+    </template>
+    <template id="service-details-3">
+        <p>Provádím diagnostiku a opravy elektrických a elektronických systémů vozidel přímo u zákazníka za použití
+            profesionálního diagnostického a měřicího vybavení.</p>
+        <ul>
+            <li>Diagnostika elektrických závad</li>
+            <li>Diagnostika řídicích jednotek</li>
+            <li>Čtení a mazání chybových kódů</li>
+            <li>Kontrola a opravy elektroinstalace</li>
+            <li>Montáž a zapojení autodoplňků</li>
+            <li>Výměna žárovek a opravy osvětlení</li>
+            <li>Kontrola autobaterie a dobíjení</li>
+            <li>Výměna autobaterie</li>
+        </ul>
+        <p>Cílem je závadu přesně lokalizovat, určit její příčinu a navrhnout nebo provést odpovídající opravu.</p>
+    </template>
+    <template id="service-details-4">
+        <p>Provádím profesionální diagnostiku vozidel přímo u zákazníka s využitím specializovaného diagnostického a
+            měřicího vybavení.</p>
+        <ul>
+            <li>Počítačová diagnostika řídicích jednotek</li>
+            <li>Čtení a mazání chybových kódů</li>
+            <li>Diagnostika elektrických a elektronických závad</li>
+            <li>Měření tlaku paliva</li>
+            <li>Měření tlaku motorového oleje</li>
+            <li>Měření kompresních tlaků motoru</li>
+            <li>Kontrola těsnosti vstřikovačů</li>
+            <li>Kontrola a diagnostika palivové soustavy</li>
+            <li>Diagnostika problémů se startováním a chodem motoru</li>
+            <li>Kontrola snímačů, akčních členů a naměřených hodnot</li>
+            <li>Vyhledávání závad podle naměřených hodnot a projevů vozidla</li>
+            <li>Využití profesionální technické a servisní dokumentace</li>
+            <li>Technické údaje, schémata zapojení, servisní postupy a specifikace výrobce</li>
+        </ul>
+        <p>Cílem není pouze vyčíst chybový kód, ale závadu správně diagnostikovat a určit její skutečnou příčinu.</p>
+    </template>
+    <template id="service-details-5">
+        <p>Provádím výměny a montáže autoskel přímo u zákazníka podle typu vozidla a konkrétního provedení skla.</p>
+        <ul>
+            <li>Výměna čelního skla</li>
+            <li>Výměna bočních skel</li>
+            <li>Výměna zadního skla</li>
+            <li>Demontáž a montáž autoskel</li>
+            <li>Výměna těsnění a lišt autoskel</li>
+            <li>Kontrola uchycení a správného usazení skla</li>
+            <li>Montáž skel se senzorem deště nebo světla</li>
+            <li>Výměna poškozených držáků a drobných prvků kolem skla</li>
+        </ul>
+        <p>Montáž provádím s důrazem na správné usazení skla, těsnost a bezpečnost vozidla.</p>
+    </template>
+
+    <dialog class="photo-modal" aria-label="Zvětšená fotografie">
+        <button class="photo-modal-close" type="button" aria-label="Zavřít fotografii">×</button>
+
+        <img class="photo-modal-image" alt="">
+    </dialog>
+
 </body>
 
 </html>
