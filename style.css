@@ -371,24 +371,148 @@ p {
     padding-bottom: 50px;
 }
 
-.price-placeholder {
-    height: 736px;
-    margin-top: 20px;
-    background: #d9d9d9bf;
-    padding: 25px;
+/* Ceník služeb */
+.pricing-travel,
+.pricing-card {
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 0 10px #0000000d;
+}
+
+.pricing-travel {
+    margin-top: 32px;
+    padding: 26px 22px;
+    border-top: 3px solid var(--red);
+}
+
+.pricing h3 {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.pricing-travel-heading p {
+    margin-top: 8px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pricing-travel-list {
+    display: grid;
+    gap: 16px;
+    margin: 22px 0 0;
+}
+
+.pricing-travel-list > div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.pricing-travel-list dt {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pricing-travel-list dd {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pricing-grid {
+    display: grid;
+    gap: 22px;
+    margin-top: 22px;
+    align-items: start;
+}
+
+.pricing-card {
+    min-width: 0;
+    padding: 26px 22px;
+}
+
+.pricing-card h3 {
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--red);
+}
+
+.pricing-list {
+    margin: 0;
+}
+
+.pricing-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 8px 16px;
+    padding: 17px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.pricing-row:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.pricing-row dt {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pricing-row dd {
+    margin: 0;
+    text-align: right;
+}
+
+.pricing-row strong {
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pricing-row small {
+    display: block;
+    margin-top: 4px;
     color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
-.price-placeholder h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
+.pricing-fleet p {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
-.price-placeholder a {
-    display: inline-block;
-    margin-top: 18px;
-    color: #333;
-    text-decoration: underline;
+.pricing-fleet .button {
+    margin-top: 24px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.pricing-note {
+    margin-top: 26px;
+    padding: 4px 0 4px 18px;
+    border-left: 3px solid var(--red);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pricing-note strong {
+    font-weight: 600;
+}
+
+.pricing-note p {
+    margin-top: 7px;
+    color: #555;
+    line-height: 1.6;
 }
 
 .references {
@@ -477,7 +601,7 @@ p {
 }
 
 .contact {
-    padding-top: 50px;
+    padding-top: 48px;
     padding-bottom: 80px;
 }
 
@@ -919,10 +1043,12 @@ dialog {
     background: #fff;
 }
 
+.footer-main .author a,
 .footer-right nav a {
     transition: color 0.25s ease;
 }
 
+.footer-main .author a:hover,
 .footer-right nav a:hover {
     color: var(--red);
 }
@@ -1122,7 +1248,7 @@ html {
     }
 
     #cenik {
-        scroll-margin-top: 0;
+        scroll-margin-top: 24px;
     }
 
     #reference {
@@ -1249,6 +1375,8 @@ html {
     }
 
     .header-call {
+        white-space: nowrap;
+        min-width: max-content;
         justify-self: end;
         display: inline-flex;
         min-height: 60px;
@@ -1376,12 +1504,63 @@ html {
         padding-bottom: 91px;
     }
 
-    .price-placeholder {
-        margin-top: 33px;
-        height: 691px;
+    /* Ceník služeb – desktop */
+    .pricing-travel {
+        margin-top: 38px;
+        padding: 30px 32px;
     }
 
-    .references {
+    .pricing-travel-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+    }
+
+    .pricing-travel-list > div {
+        display: block;
+    }
+
+    .pricing-travel-list dd {
+        margin-top: 8px;
+        font-size: 24px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: 28px;
+    }
+
+    .pricing-card {
+        padding: 30px 32px;
+    }
+
+    .pricing h3 {
+        font-size: 24px;
+    }
+
+    .pricing-row dt {
+        font-size: 16px;
+    }
+
+    .pricing-row strong {
+        font-size: 18px;
+    }
+
+    .pricing-row small {
+        font-size: 13px;
+    }
+
+    .pricing-fleet p {
+        font-size: 16px;
+    }
+
+    .pricing-note {
+        margin-top: 32px;
+        max-width: 900px;
+        font-size: 15px;
+    }
+
+        .references {
         padding: 102px 0 0;
         min-height: 810px;
     }
@@ -1427,7 +1606,7 @@ html {
     }
 
     .contact {
-        padding-top: 75px;
+        padding-top: 64px;
     }
 
     .contact .section-heading {
@@ -1529,6 +1708,48 @@ html {
 
     .placeholder span {
         font-size: 14px;
+    }
+
+    @media (max-width: 1199px) {
+        .header {
+            gap: 15px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .header nav {
+            gap: 14px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .header nav a {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .header-call {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .brand img {
+            width: 130px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .service {
+            gap: 65px;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .region {
+            width: 36%;
+        }
     }
 
     .review {
@@ -1657,33 +1878,73 @@ html {
         height: auto;
     }
 
-    @media (max-width: 1199px) {
-        .header {
-            gap: 15px;
-        }
+}
 
-        .header nav {
-            gap: 14px;
-        }
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
-        .header nav a {
-            font-size: 14px;
-        }
+    * {
+        transition: none !important;
+    }
 
-        .header-call {
-            font-size: 14px;
-        }
+    *:before {
+        transition: none !important;
+    }
 
-        .brand img {
-            width: 130px;
-        }
+    *:after {
+        transition: none !important;
+    }
 
-        .service {
-            gap: 65px;
-        }
+    .header #navigation a {
+        transition: none;
+    }
 
-        .region {
-            width: 36%;
+    .header #navigation a:hover {
+        transform: none;
+    }
+
+    .contact-links a {
+        transition: none;
+        transform: none;
+    }
+
+    .gallery-photo {
+        transition: none;
+        transform: none;
+    }
+
+    .gallery-photo img {
+        transition: none;
+        transform: none;
+    }
+
+    .photo-modal {
+        transition: none;
+        transform: none;
+    }
+
+    .photo-modal::backdrop {
+        transition: none;
+        transform: none;
+    }
+
+    #details {
+        transition: none;
+        transform: none;
+    }
+
+    #details::backdrop {
+        transition: none;
+        transform: none;
+    }
+
+    @media (max-width: 1023px) {
+        .header #navigation {
+            transition: none;
+            transform: none;
         }
     }
+
 }

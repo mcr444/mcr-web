@@ -7,13 +7,13 @@
     <title>Mobile Car Rescue | Mobilní autoservis</title>
     <meta name="description"
         content="Mobilní autoservis pro Královéhradecký a Liberecký kraj. Servisní práce, opravy vozidel, autoelektrika, diagnostika a autoskla.">
-    <link rel="icon" href="logo.webp">
+    <link rel="icon" type="image/webp" sizes="180x180" href="mcr_icon_apple.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="mcr_icon_32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="mcr_icon_16.png">
+    <link rel="icon" type="image/webp" sizes="32x32" href="mcr_icon_32.webp">
+    <link rel="icon" type="image/webp" sizes="16x16" href="mcr_icon_16.webp">
     <link rel="apple-touch-icon" sizes="180x180" href="mcr_icon_apple.png">
     <script src="script.js" defer></script>
 </head>
@@ -135,17 +135,155 @@
             </article>
         </section>
 
-        <section class="wrap pricing" id="cenik">
+        <section class="wrap pricing" id="cenik" aria-labelledby="pricing-title">
             <div class="section-heading">
-                <h2>Ceník služeb</h2>
-                <p>Přehledný ceník orientačních cen za nejčastější práce.</p>
+                <h2 id="pricing-title">Ceník služeb</h2>
+                <p>Orientační ceny nejčastějších prací. Všechny ceny jsou včetně DPH.</p>
             </div>
-            <div class="price-placeholder placeholder">
-                <div>
-                    <h3>Ceník připravujeme</h3>
-                    <p>Pro cenu konkrétní opravy nás kontaktujte.</p><a href="tel:+420736140887">736 140 887</a>
+
+            <article class="pricing-travel">
+                <div class="pricing-travel-heading">
+                    <h3>Výjezd technika</h3>
+                    <p>Výjezd se účtuje ke každému úkonu.</p>
                 </div>
+                <dl class="pricing-travel-list">
+                    <div>
+                        <dt>Vrchlabí a blízké okolí</dt>
+                        <dd>200&nbsp;Kč</dd>
+                    </div>
+                    <div>
+                        <dt>Do 20 km</dt>
+                        <dd>490&nbsp;Kč</dd>
+                    </div>
+                    <div>
+                        <dt>Příplatek nad 20 km</dt>
+                        <dd>+18&nbsp;Kč/km</dd>
+                    </div>
+                </dl>
+            </article>
+
+            <div class="pricing-grid">
+                <article class="pricing-card">
+                    <h3>Servisní práce</h3>
+                    <dl class="pricing-list">
+                        <div class="pricing-row">
+                            <dt>Mechanické práce – osobní vůz</dt>
+                            <dd><strong>740&nbsp;Kč/h</strong></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Mechanické práce – dodávka / SUV</dt>
+                            <dd><strong>800&nbsp;Kč/h</strong></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna motorového oleje a olejového filtru</dt>
+                            <dd><strong>od&nbsp;700&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna vzduchového / kabinového filtru</dt>
+                            <dd><strong>od&nbsp;350&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna palivového filtru</dt>
+                            <dd><strong>od&nbsp;400&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna spojky</dt>
+                            <dd><strong>10&nbsp;000&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna tlumičů</dt>
+                            <dd><strong>od&nbsp;1&nbsp;300&nbsp;Kč</strong><small>za nápravu</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna kol – letní / zimní</dt>
+                            <dd><strong>od&nbsp;800&nbsp;Kč</strong></dd>
+                        </div>
+                    </dl>
+                </article>
+
+                <article class="pricing-card">
+                    <h3>Rychlá pomoc</h3>
+                    <dl class="pricing-list">
+                        <div class="pricing-row">
+                            <dt>Start vozidla / pomoc s vybitou baterií</dt>
+                            <dd><strong>od&nbsp;500&nbsp;Kč</strong><small>+ výjezd</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna autobaterie</dt>
+                            <dd><strong>od&nbsp;500&nbsp;Kč</strong><small>+ baterie + výjezd</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna žárovky</dt>
+                            <dd><strong>od&nbsp;250&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna stěračů</dt>
+                            <dd><strong>od&nbsp;250&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna kola při defektu</dt>
+                            <dd><strong>od&nbsp;500&nbsp;Kč</strong><small>+ výjezd</small></dd>
+                        </div>
+                    </dl>
+                </article>
+
+                <article class="pricing-card">
+                    <h3>Diagnostika</h3>
+                    <dl class="pricing-list">
+                        <div class="pricing-row">
+                            <dt>Základní diagnostika vozidla<small>Načtení a vyhodnocení chybových kódů.</small></dt>
+                            <dd><strong>700&nbsp;Kč</strong></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Rozšířená diagnostika / hledání závady</dt>
+                            <dd><strong>od&nbsp;1&nbsp;400&nbsp;Kč</strong></dd>
+                        </div>
+                    </dl>
+                </article>
+
+                <article class="pricing-card">
+                    <h3>Brzdy</h3>
+                    <dl class="pricing-list">
+                        <div class="pricing-row">
+                            <dt>Výměna předních brzdových destiček na jedné nápravě</dt>
+                            <dd><strong>od&nbsp;1&nbsp;300&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna kotoučů a destiček na jedné nápravě</dt>
+                            <dd><strong>od&nbsp;3&nbsp;000&nbsp;Kč</strong><small>+ materiál</small></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Výměna brzdové kapaliny</dt>
+                            <dd><strong>od&nbsp;1&nbsp;300&nbsp;Kč</strong></dd>
+                        </div>
+                    </dl>
+                </article>
+
+                <article class="pricing-card">
+                    <h3>STK</h3>
+                    <dl class="pricing-list">
+                        <div class="pricing-row">
+                            <dt>Kontrola vozidla před STK</dt>
+                            <dd><strong>800&nbsp;Kč</strong></dd>
+                        </div>
+                        <div class="pricing-row">
+                            <dt>Diagnostika a kontrola před STK</dt>
+                            <dd><strong>1&nbsp;300&nbsp;Kč</strong></dd>
+                        </div>
+                    </dl>
+                </article>
+
+                <article class="pricing-card pricing-fleet">
+                    <h3>Vozové parky</h3>
+                    <p>Pro cenu servisu vozového parku nás kontaktujte. Pro pravidelné firemní zákazníky nabízíme individuální podmínky.</p>
+                    <a class="button" href="tel:+420736140887">ZAVOLAT 736 140 887</a>
+                </article>
             </div>
+
+            <aside class="pricing-note" aria-label="Podmínky ceníku">
+                <strong>Konečnou cenu vždy odsouhlasíme před zahájením opravy.</strong>
+                <p>Náhradní díly a spotřební materiál nejsou v ceně práce, pokud není uvedeno jinak. Ke každému úkonu se účtuje výjezd.</p>
+            </aside>
         </section>
 
         <section class="references" id="reference">
@@ -288,7 +426,7 @@
                     <a href="#kontakt">KONTAKT</a>
                 </nav>
             </div>
-            <p class="author">website by yurkur</p>
+            <p class="author">website by <a href="https://yurkur.net/">yurkur</a></p>
             <div class="copyright">
                 <span>© 2026 Mobile Car Rescue – Vojtěch Ludvík, IČO 10777067</span>
                 <span>Všechna práva vyhrazena</span>
